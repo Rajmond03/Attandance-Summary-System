@@ -5,14 +5,14 @@ def get_employe_name():
     while True:
         employee_name = input(
             "Please enter the name (end with 'done'): "
-            ).strip().lower
+            ).strip().lower()
         
-        if any(char.isdigit() for char in employee_name):
-            print("Only letters are allowed!")
-            continue
-        
-        elif employee_name == "done":
+        if employee_name == "done":
             return None
+        
+        elif not employee_name.replace(" ", "").isalpha():
+            print("Only letters and spaces are allowed!")
+            continue
         
         else:
             return employee_name
@@ -64,7 +64,7 @@ def main():
             add_to_employees(employee_name, hours_worked)
             calculate_overtime()
             continue
-        
+
     summary()
 
 main()
