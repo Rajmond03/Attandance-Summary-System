@@ -1,5 +1,6 @@
 employees = {}
 overtime_workers = {}
+overtimes = {}
 
 def get_employe_name():
     while True:
@@ -36,6 +37,13 @@ def add_to_employees(employee_name, hours_worked):
         return False
     else:
         employees[employee_name] = hours_worked
+
+def calculate_overtime():
+    for name, hours in employees.items():
+        if hours > 8:
+            overtime = hours - 8
+            overtimes[name] = overtime
+
 
 
 
