@@ -54,6 +54,23 @@ def summary():
     for key, values in overtimes.items():
         print(f"- {key}: {values:.1f} h")
 
+def main():
+    while True:
+        employee_name = get_employe_name()
+        if employee_name is None:
+            break
+        else:
+            hours_worked = get_hours_worked()
+            add_to_employees(employee_name, hours_worked)
+            calculate_overtime()
+            continue
+        
+    summary()
+
+main()
+
+
+
 
 
 
