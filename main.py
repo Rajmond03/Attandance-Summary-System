@@ -23,12 +23,24 @@ def get_hours_worked():
             user_input = input(
                 "Please enter the hours worked: "
             ).replace(",", ".").replace(" ", "")
-            
+
             hours_worked = float(user_input)
             return hours_worked
         
         except ValueError:
             continue
+
+def add_to_employees(employee_name, hours_worked):
+
+    if employee_name in employees:
+        return False
+    else:
+        employees[employee_name] = hours_worked
+
+
+
+
+
 
 
 
