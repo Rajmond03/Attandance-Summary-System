@@ -1,5 +1,4 @@
 employees = {}
-overtime_workers = {}
 overtimes = {}
 
 def get_employe_name():
@@ -44,8 +43,16 @@ def calculate_overtime():
             overtime = hours - 8
             overtimes[name] = overtime
 
+def summary():
+    print("The employees and their worked hours:")
+    for key, values in employees.items():
+        print(f"- {key}: {values:.1f} h")
 
-
+    print(
+        "Employees who worked overtime and their overtime hours:"
+        )
+    for key, values in overtimes.items():
+        print(f"- {key}: {values:.1f} h")
 
 
 
