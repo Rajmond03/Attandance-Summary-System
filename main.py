@@ -16,5 +16,24 @@ def get_employe_name():
         
         else:
             return employee_name
+        
+def get_hours_worked():
+    while True:
+        try:
+            user_input = input(
+                "Please enter the hours worked: "
+            ).replace(",", ".").replace(" ", "")
+            
+            hours_worked = float(user_input)
+            return hours_worked
+        
+        except ValueError:
+            continue
+
+
+
+      
+
+
 
 
