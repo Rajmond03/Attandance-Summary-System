@@ -11,7 +11,9 @@ def get_employee_name():
             return None
         
         elif not employee_name.replace(" ", "").isalpha():
-            print("Only letters and spaces are allowed!")
+            print(
+                "Only letters and spaces are allowed!"
+                )
             continue
         
         else:
@@ -24,10 +26,24 @@ def get_hours_worked():
                 "Please enter the hours worked: "
             ).replace(",", ".").replace(" ", "")
 
+            if user_input == "":
+                print(
+                    "Hours worked cannot be empty!"
+                    )
+                continue
+
             hours_worked = float(user_input)
+            
+            if hours_worked < 1:
+                print(
+                    "Only positive numbers are allowed!"
+                    )
+                continue
+
             return hours_worked
-        
+
         except ValueError:
+            print("Only numbers are allowed!")
             continue
 
 def add_to_employees(employee_name, hours_worked):
@@ -44,12 +60,15 @@ def calculate_overtime():
             overtimes[name] = overtime
 
 def summary():
-        print("The employees and their worked hours:")
+        print(
+            "The employees and their worked hours:"
+            )
         for key, values in employees.items():
             print(f"- {key}: {values:.1f} h")
 
         print(
-            "Employees who worked overtime and their overtime hours:"
+            "Employees who worked overtime "
+            "and their overtime hours:"
             )
         for key, values in overtimes.items():
             print(f"- {key}: {values:.1f} h")
@@ -66,6 +85,7 @@ def main():
 
         hours_worked = get_hours_worked()
         addition = add_to_employees(employee_name, hours_worked)
+
         if addition is False:
             print("This name already exists!")
             continue
