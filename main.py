@@ -94,8 +94,7 @@ def main():
             print("This name already exists!")
             continue
 
-        calculate_overtime()
-        
+    calculate_overtime()    
     summary()
                
 main()
