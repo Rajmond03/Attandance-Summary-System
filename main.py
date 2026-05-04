@@ -41,7 +41,7 @@ def get_hours_worked():
                 continue
 
             elif hours_worked > 16:
-                print("Maximum overtime is 16 hours!")
+                print("Maximum worked hours is 16 hours!")
                 continue
 
             return hours_worked
@@ -51,10 +51,6 @@ def get_hours_worked():
             continue
 
 def add_to_employees(employee_name, hours_worked):
-
-    if employee_name in employees:
-        return False
-    else:
         employees[employee_name] = hours_worked
 
 def calculate_overtime():
@@ -87,18 +83,17 @@ def main():
         elif employee_name is None:
             break
 
-        hours_worked = get_hours_worked()
-        addition = add_to_employees(employee_name, hours_worked)
-
-        if addition is False:
+        if employee_name in employees:
             print("This name already exists!")
             continue
+
+        hours_worked = get_hours_worked()
+        add_to_employees(employee_name, hours_worked)
 
     calculate_overtime()    
     summary()
                
 main()
-
 
 
 
