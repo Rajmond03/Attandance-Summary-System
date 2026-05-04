@@ -40,6 +40,10 @@ def get_hours_worked():
                     )
                 continue
 
+            elif hours_worked > 16:
+                print("Maximum overtime is 16 hours!")
+                continue
+
             return hours_worked
 
         except ValueError:
