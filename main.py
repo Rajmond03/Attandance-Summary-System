@@ -73,9 +73,13 @@ def summary():
         for key, values in overtimes.items():
             print(f"- {key}: {values:.1f} h")
 
+        total_overtime = sum(overtimes.values())
+        print(f"Total overtime: {total_overtime:.1f} h")
+
 def main():
     while True:
         employee_name = get_employee_name()
+        
         if employee_name is None and not employees:
             print("No name entered!")
             continue
@@ -95,7 +99,7 @@ def main():
                
 main()
 
-#fixed from 4.
+
 
 
 
